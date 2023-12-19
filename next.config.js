@@ -1,21 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-      appDir: true,
-      serverComponentsExternalPackages: ["mongoose"],
-    },
-    // output: 'export',
-    images: {
-     
-      domains: ['lh3.googleusercontent.com'],
-    },
-    webpack(config) {
-      config.experiments = {
-        ...config.experiments,
-        topLevelAwait: true,
-      }
-      return config
+  experimental: {
+    serverComponentsExternalPackages: ["mongoose"],
+  },
+  output: 'export', // Use 'export' for "next export"
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
+  webpack(config) {
+    config.experiments = {
+      ...config.experiments,
+      topLevelAwait: true,
     }
-  }
-  
-  module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;
